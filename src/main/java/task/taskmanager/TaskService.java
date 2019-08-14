@@ -12,7 +12,7 @@ import java.util.List;
  * класс с логикой работой заявками
  */
 @Service
-public class TaskService {
+public class TaskService  { //комментарий
 
     @Autowired
     @Qualifier("localTaskRepositoryMap")
