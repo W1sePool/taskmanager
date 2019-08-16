@@ -29,7 +29,7 @@ public class TaskService  { //комментарий
         if(task.getName().matches("^\\d*$")){
             throw new Exception("name must contains one character");
         }
-        if (task.getName().matches("a-zA-Zа-яА-Я")){
+        if (task.getName().matches("\\D\\w")){
             throw new Exception("name must contains one letter");
         }
 
