@@ -39,6 +39,11 @@ public class TaskAPI {
 
     }
 
+    @DeleteMapping
+    public void delete() {
+        System.out.println("метод delete");
+    }
+
 
 }
 
