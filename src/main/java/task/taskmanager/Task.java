@@ -13,7 +13,7 @@ public class Task {
 	@NotNull(message = "number must be not null")
 	private Integer number; // номер заявки
 	@NotBlank(message = "name must be not blank")
-	private String name; // наименование
+	private String name; // наименование заявки
 
 	public Task() {
 	}
