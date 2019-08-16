@@ -44,6 +44,7 @@ public class TaskAPI {
         System.out.println("метод delete");
         System.out.println("Hello");
         System.out.println("что-нибудь");
+        System.out.println("новый комментарий");
     }
 
 
