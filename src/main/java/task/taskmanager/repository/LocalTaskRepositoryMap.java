@@ -1,21 +1,18 @@
 package task.taskmanager.repository;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
-import task.taskmanager.Task;
+import task.taskmanager.model.Task;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 @Repository
 public class LocalTaskRepositoryMap implements TaskRepository {
 
     public LocalTaskRepositoryMap() {
         this.taskMap = new LinkedHashMap<>();
-        Task task1 = new Task(1L, 1, "выдача паспорта");
-        Task task2 = new Task(2L, 22, "пропуск в посольство");
-        Task task3 = new Task(3L, 343, "приглашение на собеседование");
+        Task task1 = new Task(1L, 1, "выдача паспорта","hello1","hi1","creating");
+        Task task2 = new Task(2L, 22, "пропуск в посольство","hello2","hi2","send");
+        Task task3 = new Task(3L, 343, "приглашение на собеседование","hello3","hi3","recieve");
         taskMap.put(task1.getId(), task1);
         taskMap.put(task2.getId(), task2);
         taskMap.put(task3.getId(), task3);

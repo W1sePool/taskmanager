@@ -1,6 +1,6 @@
 package task.taskmanager.repository;
 
-import task.taskmanager.Task;
+import task.taskmanager.model.Task;
 
 import java.util.List;
 
