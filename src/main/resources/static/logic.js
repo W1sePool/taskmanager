@@ -183,8 +183,8 @@ Ext.onReady(function () {
                 autoSelect:true,   //автоматическаий выбор
                 store:fromAddressStore,
                 name:'fromAddress',
-               valueField:'name',//поле из модели которое отвечает за значение
-               displayField:'name'//поле из моделей которое отвечает за отображениебfd
+                valueField:'name',//поле из модели которое отвечает за значение
+                displayField:'name'//поле из моделей которое отвечает за отображениебfd
             }
         ],
         buttons: [

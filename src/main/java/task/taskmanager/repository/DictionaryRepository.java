@@ -1,38 +1,39 @@
 package task.taskmanager.repository;
 
 import org.springframework.stereotype.Repository;
+import task.taskmanager.model.Dictionary;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class DictionaryRepository {
-    private static List<String> fromAddress = new ArrayList<>();
-    private static List<String> toAddress = new ArrayList<>();
-    private static List<String> status = new ArrayList<>();
+    private static List<Dictionary> fromAddress = new ArrayList<>();
+    private static List<Dictionary> toAddress = new ArrayList<>();
+    private static List<Dictionary> status = new ArrayList<>();
 
     static {
-        fromAddress.add("hello");
-        fromAddress.add("hello1");
-        fromAddress.add("hello2");
-        fromAddress.add("hello3");
-        toAddress.add("hi1");
-        toAddress.add("hi2");
-        toAddress.add("hi3");
-        status.add("creating");
-        status.add("send");
-        status.add("recieve");
+        fromAddress.add(new Dictionary("hello"));
+        fromAddress.add(new Dictionary("hello1"));
+        fromAddress.add(new Dictionary("hello2"));
+        fromAddress.add(new Dictionary("hello3"));
+        toAddress.add(new Dictionary("hi1"));
+        toAddress.add(new Dictionary("hi2"));
+        toAddress.add(new Dictionary("hi3"));
+        status.add(new Dictionary("creating"));
+        status.add(new Dictionary("send"));
+        status.add(new Dictionary("recieve"));
     }
 
-    public  List<String> getFromAddress() {
+    public  List<Dictionary> getFromAddress() {
         return fromAddress;
     }
 
-    public List<String> getToAddress() {
+    public List<Dictionary> getToAddress() {
         return toAddress;
     }
 
-    public  List<String> getStatus() {
+    public  List<Dictionary> getStatus() {
         return status;
     }
 }
