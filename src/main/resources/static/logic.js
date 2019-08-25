@@ -160,7 +160,7 @@ Ext.onReady(function () {
     var form = Ext.create('Ext.form.Panel', {
         title: 'forma',
         heigth: 300,
-        width: 250,
+        width: 300,
         renderTo: Ext.getBody(),//нарисовать в боди .
         items: [
             {
@@ -185,8 +185,28 @@ Ext.onReady(function () {
                 name:'fromAddress',
                 valueField:'name',//поле из модели которое отвечает за значение
                 displayField:'name'//поле из моделей которое отвечает за отображениебfd
+            },
+            {
+                xtype: 'combobox',
+                fieldLabel:'To address',
+                autoSelect:true,   //автоматическаий выбор
+                store:toAddressStore,
+                name:'toAddress',
+                valueField:'name',//поле из модели которое отвечает за значение
+                displayField:'name'//поле из моделей которое отвечает за отображениебfd
+            },
+            {
+                xtype: 'combobox',
+                fieldLabel:'Status',
+                autoSelect:true,   //автоматическаий выбор
+                store:statusStore,
+                name:'status',
+                valueField:'name',//поле из модели которое отвечает за значение
+                displayField:'name'//поле из моделей которое отвечает за отображениебfd
             }
+
         ],
+
         buttons: [
             {
                 text: 'save',
