@@ -7,6 +7,7 @@ import task.taskmanager.model.Task;
 import task.taskmanager.service.TaskService;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -41,11 +42,9 @@ public class TaskAPI {
     }
 
     @DeleteMapping
-    public void delete() {
+    public void delete( @RequestBody Task task) {
         System.out.println("метод delete");
-        System.out.println("Hello");
-        System.out.println("что-нибудь");
-        System.out.println("новый комментарий");
+        taskService.delete(task);
     }
 
 

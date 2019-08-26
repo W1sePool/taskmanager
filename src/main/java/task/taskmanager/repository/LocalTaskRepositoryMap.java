@@ -8,6 +8,8 @@ import java.util.*;
 @Repository
 public class LocalTaskRepositoryMap implements TaskRepository {
 
+
+
     public LocalTaskRepositoryMap() {
         this.taskMap = new LinkedHashMap<>();
         Task task1 = new Task(1L, 1, "выдача паспорта","hello1","hi1","creating");
@@ -45,5 +47,10 @@ public class LocalTaskRepositoryMap implements TaskRepository {
     @Override
     public void update(Task task) {
         taskMap.put(task.getId(),task);
+    }
+
+    @Override
+    public void delete(Long id) {
+        taskMap.remove(id);
     }
 }

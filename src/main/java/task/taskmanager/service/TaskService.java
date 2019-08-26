@@ -47,4 +47,8 @@ public class TaskService  { //комментарий
             taskRepository.update(task);
         }
     }
+
+    public void delete(Task task){
+        taskRepository.delete(task.getId());
+    }
 }
