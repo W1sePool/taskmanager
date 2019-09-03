@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import task.taskmanager.model.Task;
-import task.taskmanager.repository.TaskRepository;
+import task.taskmanager.repository.task.TaskRepository;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
 public class TaskService  { //комментарий
 
     @Autowired
-    @Qualifier("localTaskRepositoryMap")
+   // @Qualifier("taskDBRepository")
     private TaskRepository taskRepository;
 
     public List<Task> getAllTasks() {

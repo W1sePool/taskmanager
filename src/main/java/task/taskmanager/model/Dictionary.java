@@ -1,5 +1,5 @@
 package task.taskmanager.model;
-
+@Deprecated //пометка устаревшего класса
 public class Dictionary {
 
    private String name;

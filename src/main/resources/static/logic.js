@@ -21,6 +21,7 @@ Ext.onReady(function () {
             }
         }
     });
+
     Ext.define('FromAddress', {//создаем обьект ext
         extend: 'Ext.data.Model',//обьявляем обьект моделью
         fields: [//обьявляем поля модели
@@ -132,6 +133,35 @@ Ext.onReady(function () {
         }
 
     ]
+
+    var form = Ext.create('Ext.form.Panel', {
+        bodyPadding:10,
+        title: 'forma',
+        heigth: 300,
+        width: 300,
+        renderTo: Ext.getBody(),//нарисовать в боди .
+        items: formItems,
+
+        buttons: [
+            {
+                text: 'save',
+                scale:'small',
+                icon:'icons/save-icon1.png',
+                handler: function () {
+                    form.getForm().submit({
+                            url: 'tasks',
+                            jsonSubmit: true, //преобразовать результат в джсон
+                            success: function () {
+                                taskStore.load()//перегрузить данные в сторедже
+                            }
+                        }
+                    )
+                }
+
+            }
+        ]
+    })
+
     Ext.create('Ext.grid.Panel', {
         title: 'Tasks',
         height: 400,
@@ -147,13 +177,12 @@ Ext.onReady(function () {
 
             {
                 header: 'Actions',
-                text: 'delete', //то что написанно
                 align: 'center',// все элементы по центру
                 xtype: 'actioncolumn', // в этих колонках генерируются действия
                 items: [{
+                    icon:'icons/update.png',
                     xtype: 'button',
-                    text: 'Delete',
-                    scale: 'small',
+                    scale: 'small',//небольшая
                     handler: function (grid, rowIndex) {
                         var record = grid.getStore().getAt(rowIndex);//получаем сторейдж в таблице а в нем получаем запись по индексу строки
                         var modalDialog = Ext.create('Ext.form.Panel', {
@@ -167,6 +196,7 @@ Ext.onReady(function () {
                             items: formItems,
                             buttons: [{
                                 text: 'Update',
+
                                 handler: function () {
                                     var values = modalDialog.getValues();
                                     var task = taskStore.findRecord('id', record.data.id); //найти запись в скобках указывает по какому параметру
@@ -199,7 +229,7 @@ Ext.onReady(function () {
                 },
                     {
                         xtype:'button',
-                        icon:'icons/iconsDelete.png',
+                        icon: 'icons/iconsDelete.png',
                         scale:'small',
                         handler:function(grid,rowIndex){
                             var record =  grid.getStore().getAt(rowIndex);
@@ -216,32 +246,4 @@ Ext.onReady(function () {
         renderTo: Ext.getBody() //нарисовать в боди
 
     })
-
-    var form = Ext.create('Ext.form.Panel', {
-        bodyPadding:10,
-        title: 'forma',
-        heigth: 300,
-        width: 300,
-        renderTo: Ext.getBody(),//нарисовать в боди .
-        items: formItems,
-
-        buttons: [
-            {
-                text: 'save',
-                handler: function () {
-                    form.getForm().submit({
-                            url: 'tasks',
-                            jsonSubmit: true, //преобразовать результат в джсон
-                            success: function () {
-                                taskStore.load()//перегрузить данные в сторедже
-                            }
-                        }
-                    )
-                }
-
-            }
-        ]
-    })
-
-
 })
