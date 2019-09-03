@@ -7,7 +7,7 @@ import task.taskmanager.model.Task;
 
 import java.util.List;
 @Repository
-@Profile("db")
+@Profile("!local")
 public class TaskDBRepository implements TaskRepository {
 
     @Autowired

@@ -10,7 +10,7 @@ import task.taskmanager.model.ToAddress;
 import java.util.List;
 
 @Repository
-@Profile("db")
+@Profile("!local")
 public class DBDictionaryRepository implements DictionaryRepository{
     @Autowired
     FromAddressRepository fromAddressRepository;
