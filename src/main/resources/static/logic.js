@@ -130,8 +130,23 @@ Ext.onReady(function () {
             name: 'status',
             valueField: 'name',//поле из модели которое отвечает за значение
             displayField: 'name'//поле из моделей которое отвечает за отображениебfd
-        }
+        }, {
+            xtype: 'button',
+            text: 'save',
+            scale:'small',
+            icon:'icons/save-icon1.png',
+            handler: function () {
+                form.getForm().submit({
+                        url: 'tasks',
+                        jsonSubmit: true, //преобразовать результат в джсон
+                        success: function () {
+                            taskStore.load()//перегрузить данные в сторедже
+                        }
+                    }
+                )
+            }
 
+        }
     ]
 
     var form = Ext.create('Ext.form.Panel', {

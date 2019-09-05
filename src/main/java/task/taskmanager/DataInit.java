@@ -17,6 +17,7 @@ import task.taskmanager.repository.task.TaskCRUDRepository;
 
 @Component
 @Profile("h2")
+
 //@EnableTransactionManagement//подключает к этому классу возможность вставлять в базу данных данные :)
 public class DataInit implements ApplicationRunner {
 
