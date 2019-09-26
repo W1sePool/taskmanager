@@ -16,6 +16,8 @@ public class ToAddress {
 
     public ToAddress(String name) {
         this.name = name;
+        Task task= new Task();
+        double PI = Math.PI;
     }
 
     public String getName() {
@@ -33,4 +35,5 @@ public class ToAddress {
     public void setId(Long id) {
         this.id = id;
     }
+
 }

@@ -9,7 +9,7 @@ import task.taskmanager.service.DicrionaryService;
 
 import java.util.List;
 
-@RestController
+@RestController//перехватывает http запрос ,  и преобразует ответ в JSON
 @RequestMapping("dictionaries")
 public class DictionaryAPI {
     @Autowired

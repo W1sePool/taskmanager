@@ -7,7 +7,7 @@ import task.taskmanager.model.Task;
 import java.util.*;
 
 @Repository
-@Profile("local")
+@Profile("local")//инициализация при профиле локал
 public class LocalTaskRepositoryMap implements TaskRepository {
 
 

@@ -14,13 +14,13 @@ import java.util.Objects;
 @Entity
 public class Task {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id //именно это поле  будем primary key
+	@GeneratedValue(strategy = GenerationType.AUTO)//генерируется автоматически Id
 	private Long id;// id заявки
 
 	@NotNull(message = "number must be not null")
 	private Integer number; // номер заявки
-	@NotBlank(message = "name must be not blank")
+	@NotBlank(message = "name must be not blank")//- не пустая строка.
 	private String name; // наименование заявки
 	@NotBlank
 	private String fromAddress;

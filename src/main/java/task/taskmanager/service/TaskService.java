@@ -11,10 +11,10 @@ import java.util.List;
 /**
  * класс с логикой работой заявками
  */
-@Service
+@Service//логика
 public class TaskService  { //комментарий
 
-    @Autowired
+    @Autowired//найти среди бинов в таск репозиторий . и подставить его в поле
    // @Qualifier("taskDBRepository")
     private TaskRepository taskRepository;
 
